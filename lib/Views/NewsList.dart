@@ -22,15 +22,15 @@ class ShowNewsList extends StatelessWidget {
           itemBuilder: (context, index) {
             Article article = apiController.articles[index];
 
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: FittedBox(
+            return FittedBox(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: InkWell(
                   onTap: () {
                     Get.to(() => DetailView(article));
                   },
                   child: Container(
-                    width: MediaQuery.of(context).size.width * 0.94,
+                    width: MediaQuery.of(context).size.width,
                     padding: EdgeInsets.zero,
                     child: Card(
                       shape: RoundedRectangleBorder(
